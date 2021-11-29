@@ -3,8 +3,8 @@ require './players.rb'
 require './gameassist.rb'
 
 referee = GameAssist.new
-circle = Players.new('O', '')
-cross = Players.new('X', '')
+circle = Players.new('O')
+cross = Players.new('X')
 
 a1 = Board.new('A1', '_')
 a2 = Board.new('A2', '_')
@@ -24,12 +24,14 @@ loop do
   cross.validate_move
   Board.change_value(cross.input, cross.name)
   Board.display_board
+  cross.check_victory
   i += 1
   break if i == 9
   circle.enter_coordinate
   circle.validate_move
   Board.change_value(circle.input, circle.name)
   Board.display_board
+  circle.check_victory
   i += 1
   break if i == 9
 end
