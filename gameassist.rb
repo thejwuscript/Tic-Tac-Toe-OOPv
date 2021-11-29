@@ -1,4 +1,6 @@
-class GameAssist
+class GameAssist < Board
+  def initialize; end
+
   def give_intro
     puts "Let's play Tic Tac Toe."
     puts ''
@@ -19,5 +21,41 @@ class GameAssist
     puts "X's turn. Type a coordinate."
     puts ''
   end
-end
 
+  def occupied_by_X?(input)
+    if @@all[input] == "X"
+      puts "Invalid play. Try again."
+      return true
+    end
+  end
+  
+  def occupied_by_O?(input)
+     if @@all[input] == "O"
+      puts "Invalid play. Try again."
+      return true
+    end
+  end
+
+=begin
+  def three_in_a_row?
+    if @@all['A1'] == @@all['A2'] && @@all['A1'] == @@all['A3'] && @@all['A1'] != "_"
+      true
+    elsif @@all['B1'] == @@all['B2'] && @@all['B1'] == @@all['B3'] && @@all['B1'] != "_"
+      true
+    elsif @@all['C1'] == @@all['C2'] && @@all['C1'] == @@all['C3'] && @@all['C1'] != "_"
+      true
+    elsif @@all['A1'] == @@all['B1'] && @@all['A1'] == @@all['C1'] && @@all['A1'] != "_"
+      true
+    elsif @@all['A2'] == @@all['B2'] && @@all['A2'] == @@all['C2'] && @@all['A2'] != "_"
+      true
+    elsif @@all['A3'] == @@all['B3'] && @@all['A3'] == @@all['C3'] && @@all['A3'] != " "
+      true
+    elsif @@all['A1'] == @@all['B2'] && @@all['A1'] == @@all['C3'] && @@all['A1'] != "_"
+      true
+    elsif @@all['C1'] == @@all['B2'] && @@all['C1'] == @@all['A3'] && @@all['C1'] != "_"
+      true
+    else false
+    end
+  end
+=end
+end
