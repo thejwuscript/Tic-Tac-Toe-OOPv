@@ -56,6 +56,7 @@ loop do
   print "Play again? (y/n) "
   if gets.chomp.downcase == "n"
     break
+  else puts ""
   end
   
 end
