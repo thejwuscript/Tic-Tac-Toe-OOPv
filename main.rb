@@ -2,7 +2,7 @@ require './board.rb'
 require './players.rb'
 require './gameassist.rb'
 
-referee = GameAssist.new
+facilitator = GameAssist.new
 circle = Players.new('O')
 cross = Players.new('X')
 
@@ -16,22 +16,33 @@ c1 = Board.new('C1', '_')
 c2 = Board.new('C2', '_')
 c3 = Board.new('C3', ' ')
 
+facilitator.give_intro
 Board.display_board
 
-i = 0
+i = 0 #turn count
 loop do
+  puts " \nX's turn. Enter a coordinate."
   cross.enter_coordinate
   cross.validate_move
   Board.change_value(cross.input, cross.name)
   Board.display_board
   cross.check_victory
+  break if cross.winner == 1
   i += 1
-  break if i == 9
+  if i == 9
+    puts " \nIt's a draw. Game over."
+    break
+  end
+  puts " \nO's turn. Enter a coordinate."
   circle.enter_coordinate
   circle.validate_move
   Board.change_value(circle.input, circle.name)
   Board.display_board
   circle.check_victory
+  break if circle.winner == 1
   i += 1
-  break if i == 9
+  if i == 9
+    puts " \nIt's a draw. Game over."
+    break
+  end
 end

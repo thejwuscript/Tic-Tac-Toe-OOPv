@@ -1,10 +1,11 @@
 class Players < Board
-  attr_accessor :name, :input, :moves
+  attr_accessor :name, :input, :moves, :winner
 
   def initialize(name)
     @name = name
     @input = ""
     @moves = []
+    @winner = 0
   end
 
   def enter_coordinate
@@ -35,21 +36,8 @@ class Players < Board
       (@moves & ["C1", "C2", "C3"]).sort == ["C1", "C2", "C3"],
       (@moves & ["A1", "B2", "C3"]).sort == ["A1", "B2", "C3"],
       (@moves & ["A3", "B2", "C1"]).sort == ["A3", "B2", "C1"]
-        puts @name + " wins the game!"
+        puts " \n#{@name} wins the game!"
+        @winner = 1
     end
   end
-
-
-
-      #@@all["A1"] && @@all["A2"] && @@all["A3"],
-      #@@all["B1"] && @@all["B2"] && @@all["B3"],
-      #@@all["C1"] && @@all["C2"] && @@all["C3"],
-      #@@all["A1"] && @@all["B1"] && @@all["C1"],
-      #@@all["A2"] && @@all["B2"] && @@all["C2"],
-      #@@all["A3"] && @@all["B3"] && @@all["C3"],
-      #@@all["A1"] && @@all["B2"] && @@all["C3"],
-      #@@all["C1"] && @@all["B2"] && @@all["A3"]
-      
-
-
 end
