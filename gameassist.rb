@@ -1,5 +1,6 @@
-class GameAssist
+# frozen_string_literal: true
 
+class GameAssist
   def initialize; end
 
   def give_intro
@@ -13,5 +14,5 @@ class GameAssist
     puts " \nEach player will enter a coordinate to make their move on their turn."
     puts " \nGame Start!"
     puts ''
-  end  
+  end
 end

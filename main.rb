@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './board'
 require './players'
 require './gameassist'
@@ -6,21 +8,18 @@ facilitator = GameAssist.new
 facilitator.give_intro
 
 loop do
-  
   circle = Players.new('O')
   cross = Players.new('X')
 
-  a1 = Board.new('A1', '_')
-  a2 = Board.new('A2', '_')
-  a3 = Board.new('A3', ' ')
-  b1 = Board.new('B1', '_')
-  b2 = Board.new('B2', '_')
-  b3 = Board.new('B3', ' ')
-  c1 = Board.new('C1', '_')
-  c2 = Board.new('C2', '_')
-  c3 = Board.new('C3', ' ')
-
-  
+  Board.new('A1', '_')
+  Board.new('A2', '_')
+  Board.new('A3', ' ')
+  Board.new('B1', '_')
+  Board.new('B2', '_')
+  Board.new('B3', ' ')
+  Board.new('C1', '_')
+  Board.new('C2', '_')
+  Board.new('C3', ' ')
   Board.display_board
 
   i = 0 # turn count
@@ -53,10 +52,8 @@ loop do
     end
   end
 
-  print "Play again? (y/n) "
-  if gets.chomp.downcase == "n"
-    break
-  else puts ""
-  end
-  
+  print 'Play again? (y/n) '
+  break if gets.chomp.downcase == 'n'
+
+  puts ''
 end

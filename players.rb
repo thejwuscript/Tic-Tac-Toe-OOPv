@@ -1,9 +1,11 @@
+# frozen_string_literal = true
+
 class Players < Board
   attr_accessor :name, :input, :moves, :winner
 
   def initialize(name)
     @name = name
-    @input = ""
+    @input = ''
     @moves = []
     @winner = 0
   end
@@ -36,8 +38,8 @@ class Players < Board
       (@moves & ["C1", "C2", "C3"]).sort == ["C1", "C2", "C3"],
       (@moves & ["A1", "B2", "C3"]).sort == ["A1", "B2", "C3"],
       (@moves & ["A3", "B2", "C1"]).sort == ["A3", "B2", "C1"]
-        puts " \n#{@name} wins the game!"
-        @winner = 1
+      puts " \n#{@name} wins the game!"
+      @winner = 1
     end
   end
 end
