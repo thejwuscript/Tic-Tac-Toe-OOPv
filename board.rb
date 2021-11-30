@@ -17,8 +17,8 @@ class Board
 
   def self.display_board
     puts '  A B C'
-    puts "1 " + @@all['A1'] + '|' + @@all['B1'] + '|' + @@all['C1']
-    puts "2 " + @@all['A2'] + '|' + @@all['B2'] + '|' + @@all['C2']
-    puts "3 " + @@all['A3'] + '|' + @@all['B3'] + '|' + @@all['C3']
+    puts "1 #{@@all['A1']}|#{@@all['B1']}|#{@@all['C1']}"
+    puts "2 #{@@all['A2']}|#{@@all['B2']}|#{@@all['C2']}"
+    puts "3 #{@@all['A3']}|#{@@all['B3']}|#{@@all['C3']}"
   end
 end

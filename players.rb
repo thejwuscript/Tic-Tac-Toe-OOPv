@@ -1,4 +1,4 @@
-# frozen_string_literal = true
+# frozen_string_literal: true
 
 class Players < Board
   attr_accessor :name, :input, :moves, :winner
@@ -29,7 +29,7 @@ class Players < Board
 
   def check_victory
     case
-    when 
+    when
       (@moves & ["A1", "B1", "C1"]).sort == ["A1", "B1", "C1"],
       (@moves & ["A2", "B2", "C2"]).sort == ["A2", "B2", "C2"],
       (@moves & ["A3", "B3", "C3"]).sort == ["A3", "B3", "C3"],
