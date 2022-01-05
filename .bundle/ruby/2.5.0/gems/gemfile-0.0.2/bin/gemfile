@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+list = File.read(ARGV[0])
+
+puts "source 'https://rubygems.org'"
+puts
+
+list.split("\n").each do |line|
+  if line =~ /^([^ ]+)\s+-v\s+(.+)$/
+    puts "gem '#{$1}', '#{$2}'"
+  end
+end
